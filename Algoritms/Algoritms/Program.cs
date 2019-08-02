@@ -1,29 +1,29 @@
 ﻿using System;
-using System.Collections;
-using System.Linq;
 using System.Collections.Generic;
 
 namespace Algoritms {
     class Program {
         static void Main(string[] args) {
-            var testCase = int.Parse(Console.ReadLine());
+            int testCaseNumber = int.Parse(Console.ReadLine());
 
-            var abLines = new List<string>();
+            string[] abLines = new string[testCaseNumber];
+            
+            for (int i = 0; i < testCaseNumber; i++) {
+                abLines[i] = Console.ReadLine();
+                string[] temp = abLines[i].Split(' ');
 
-            var answerList = new List<int>();
-            for (int i = 0; i < testCase; i++) {
-                abLines.Add(Console.ReadLine());
+                int A = int.Parse(temp[0]) % 10;
+                int B = int.Parse(temp[1]) % 10;
 
-                var temp = abLines[i].Split(' ');
+                //백준에서 이렇게 쓰면 정답이 아니란다... 그리고 코드길이가 길어졌네 당연한건가.
+                //int t = (int)Math.Pow(A, B) % 10;
+                //abLines[i] = t.ToString();
 
-                var A = int.Parse(temp[0]) % 10;
-                var B = int.Parse(temp[1]) % 10;
-
-                answerList.Add((int)Math.Pow(A, B) % 10);
+                // 계산이 너무 오래걸린다.
+                //answerList.Add((int)Math.Pow(A, B) % 10);
             }
-
-            foreach(var c in answerList) {
-                Console.WriteLine("{0}번 컴퓨터가 처리합니다.", c);
+            foreach(string t in abLines) {
+                Console.WriteLine(t);
             }
         }
     }
