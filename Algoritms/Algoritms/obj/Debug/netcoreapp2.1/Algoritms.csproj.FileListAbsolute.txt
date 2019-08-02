@@ -1,0 +1,11 @@
+C:\Users\hy\Documents\Algoritm\Algoritms\Algoritms\bin\Debug\netcoreapp2.1\Algoritms.deps.json
+C:\Users\hy\Documents\Algoritm\Algoritms\Algoritms\bin\Debug\netcoreapp2.1\Algoritms.runtimeconfig.json
+C:\Users\hy\Documents\Algoritm\Algoritms\Algoritms\bin\Debug\netcoreapp2.1\Algoritms.runtimeconfig.dev.json
+C:\Users\hy\Documents\Algoritm\Algoritms\Algoritms\bin\Debug\netcoreapp2.1\Algoritms.dll
+C:\Users\hy\Documents\Algoritm\Algoritms\Algoritms\bin\Debug\netcoreapp2.1\Algoritms.pdb
+C:\Users\hy\Documents\Algoritm\Algoritms\Algoritms\obj\Debug\netcoreapp2.1\Algoritms.csprojAssemblyReference.cache
+C:\Users\hy\Documents\Algoritm\Algoritms\Algoritms\obj\Debug\netcoreapp2.1\Algoritms.csproj.CoreCompileInputs.cache
+C:\Users\hy\Documents\Algoritm\Algoritms\Algoritms\obj\Debug\netcoreapp2.1\Algoritms.AssemblyInfoInputs.cache
+C:\Users\hy\Documents\Algoritm\Algoritms\Algoritms\obj\Debug\netcoreapp2.1\Algoritms.AssemblyInfo.cs
+C:\Users\hy\Documents\Algoritm\Algoritms\Algoritms\obj\Debug\netcoreapp2.1\Algoritms.dll
+C:\Users\hy\Documents\Algoritm\Algoritms\Algoritms\obj\Debug\netcoreapp2.1\Algoritms.pdb
