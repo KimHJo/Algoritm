@@ -15,31 +15,34 @@ namespace Algoritms {
 
         }
         public static string solution(int[] numbers) {
-            var numberList = numbers.ToList();
-            numberList.AddRange(numberList);
 
+            for (int k= 0; k < numbers.Length; k++) {
+                int j = 0;
 
-            int i = 0;
-            while (true){
-                if (i == numbers.Length) break;
-                int j = i;
+                for (int i = numbers.Length - 1; i >= 0; i--) {
 
-                for (j = i; j < numbers.Length + i; j++) {
-                    Console.Write(j);
+                    var str = numbers[j].ToString() + numbers[j + 1].ToString();
+                    var str2 = numbers[j + 1].ToString() + numbers[j].ToString();
+
+                    if (int.Parse(str) <= int.Parse(str2)) {
+                        swap(numbers, j, j + 1);
+                    }
+
+                    j++;
+
                 }
-                Console.WriteLine("증가");
-
-                for (j = numbers.Length + i - 1; j >= i; j--) {
-                    Console.Write(j);
-                }
-                Console.WriteLine("감소");
-
-                i++;
             }
-
-
             string answer = "";
+
+            foreach(var c in numbers) {
+                answer += c.ToString();
+            }
             return answer;
+        }
+        public static void swap(int[] array, int a, int b) {
+            var temp = array[a];
+            array[a] = array[b];
+            array[b] = temp;
         }
     }
 }
