@@ -25,12 +25,18 @@ namespace Algoritms {
 
             var temp = new List<int>();
 
-            for(int i = 0; i < commands.Length/3; i++) {
-                for(int j = commands[i, 0] - 1; j <= commands[i, 1]-1; j++) {
+            var commandsLen = commands.Length / 3;
+
+            for(int i = 0; i < commandsLen; i++) {
+                var start = commands[i, 0] - 1;
+                var end = commands[i, 1] - 1;
+                var index = commands[i, 2] - 1;
+
+                for (int j = start; j <= end; j++) {
                     temp.Add(array[j]);
                 }
                 temp.Sort();
-                answer.Add(temp[commands[i, 2] - 1]);
+                answer.Add(temp[index]);
                 temp.Clear();
             }
 
