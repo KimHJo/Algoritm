@@ -16,9 +16,10 @@ namespace Algoritms {
             };
 
 
-            //foreach(var item in solution(Array, Command)) {
-            //    Console.WriteLine(item);
-            //}
+            foreach (var item in solution(Array, Command)) {
+                Console.WriteLine(item);
+            }
+
             //var temp = new List<int>();
             //var answer = new List<int>();
 
@@ -41,14 +42,18 @@ namespace Algoritms {
 
             var temp = new List<int>();
 
-            for(int i = 0; i < commands.Length/3; i++) {
-                for(int j = commands[i,0]; j < commands[i,1]; j++) {
-                    temp.Add(array[j - 1]);
-                }
-                temp.Sort();
-                answer.Add(temp[commands[i, 2] - 1]);
-                temp.Clear();
+            foreach(var i in array) {
+                answer.Add(i);
             }
+
+            //for(int i = 0; i < commands.Length/3; i++) {
+            //    for(int j = commands[i,0]; j < commands[i,1]; j++) {
+            //        temp.Add(array[j - 1]);
+            //    }
+            //    temp.Sort();
+            //    answer.Add(temp[commands[i, 2] - 1]);
+            //    temp.Clear();
+            //}
 
             return answer.ToArray();
 
