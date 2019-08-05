@@ -1,48 +1,40 @@
 ﻿using System;
+using System.Collections;
+using System.Linq;
+using System.IO;
 using System.Collections.Generic;
 
 namespace Algoritms {
     class Program {
         static void Main(string[] args) {
+            int[] Array = new int[] { 1, 5, 2, 6, 3, 7, 4 };
 
+            int[,] Command = new int[,] {
+                {2, 5, 3 },
+                {4, 4, 1 },
+                {1, 7, 3 },
+            };
 
+            
+            foreach(var i in solution(Array, Command)) {
+                Console.WriteLine(i);
+            }
+        }
+        public static int[] solution(int[] array, int[,] commands) {
+            int[] answer = new int[] { };
+            int[] temp = new int[] { };
+            for(int i = 0; i < commands.Length / 3; i++) {
+                for(int j = commands[i, 0]-1; j< commands[i,2]; j++) {
+                    for(int k = 0; k < commands[i,0] - commands[i,2]; k++) {
+                        temp[k] = array[j];
+                    }
+                }
+                Array.Sort(temp);
+                answer[i] = temp[commands[i, 2]];
+            }
 
+            return answer;
 
-            #region <1009>
-            //int testCaseNumber = int.Parse(Console.ReadLine());
-
-            //string[] abLines = new string[testCaseNumber];
-
-            //int[] answer = new int[testCaseNumber];
-
-            //for (int i = 0; i < testCaseNumber; i++) {
-            //    abLines[i] = Console.ReadLine();
-            //    string[] temp = abLines[i].Split(' ');
-
-            //    int A = int.Parse(temp[0]) % 10;
-            //    int B = int.Parse(temp[1]) % 4;
-            //    if (A == 0) {
-            //        answer[i] = 10;
-            //    } else {
-            //        switch (B) {
-            //            case 0:
-            //                answer[i] = A * A * A * A % 10; ;
-            //                break;
-            //            case 1:
-            //                answer[i] = A % 10;
-            //                break;
-            //            case 2:
-            //                answer[i] = A * A % 10;
-            //                break;
-            //            case 3:
-            //                answer[i] = A * A * A % 10;
-            //                break;
-            //        }
-            //    }
-            //    Console.WriteLine(answer[i]);
-            //}
-
-            #endregion
         }
     }
 }
