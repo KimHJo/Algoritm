@@ -11,30 +11,24 @@ namespace Algoritms {
             int[] Numbers = new int[] { 6, 10, 2, };
             int[] Numbers2 = new int[] { 3, 30, 34, 5, 9, };
 
-            solution(Numbers);
-
+            Console.WriteLine(solution(Numbers2));
+            
         }
         public static string solution(int[] numbers) {
 
-            for (int k= 0; k < numbers.Length; k++) {
-                int j = 0;
+            int numleng = numbers.Length;
+            for (int k = 0; k < numbers.Length; k++) {
+                for (int i = 0; i < numbers.Length - 1; i++) {
+                    var str1 = numbers[i].ToString() + numbers[i + 1];
+                    var str2 = numbers[i + 1].ToString() + numbers[i].ToString();
 
-                for (int i = numbers.Length - 1; i >= 0; i--) {
-
-                    var str = numbers[j].ToString() + numbers[j + 1].ToString();
-                    var str2 = numbers[j + 1].ToString() + numbers[j].ToString();
-
-                    if (int.Parse(str) <= int.Parse(str2)) {
-                        swap(numbers, j, j + 1);
-                    }
-
-                    j++;
-
+                    if (int.Parse(str1) >= int.Parse(str2))
+                        swap(numbers, i, i + 1);
                 }
             }
             string answer = "";
 
-            foreach(var c in numbers) {
+            foreach(var c in numbers.Reverse()) {
                 answer += c.ToString();
             }
             return answer;
