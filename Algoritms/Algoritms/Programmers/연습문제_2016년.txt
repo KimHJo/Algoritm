@@ -1,0 +1,50 @@
+﻿using System;
+using System.Collections;
+using System.Linq;
+using System.IO;
+using System.Collections.Generic;
+
+namespace Algoritms {
+    class Program {
+        static void Main(string[] args) {
+
+        }
+
+        public string solution(int a, int b) {
+            DateTime dt = new DateTime(2016, a, b);
+
+            DayOfWeek dw = dt.DayOfWeek;
+
+            string answer = "";
+            switch (dw) {
+                case DayOfWeek.Monday:
+                    answer = "MON";
+                    break;
+                case DayOfWeek.Tuesday:
+                    answer = "TUE";
+                    break;
+                case DayOfWeek.Wednesday:
+                    answer = "WED";
+                    break;
+                case DayOfWeek.Thursday:
+                    answer = "THU";
+                    break;
+                case DayOfWeek.Friday:
+                    answer = "FRI";
+                    break;
+                case DayOfWeek.Saturday:
+                    answer = "SAT";
+                    break;
+                case DayOfWeek.Sunday:
+                    answer = "SUN";
+                    break;
+                default: break;
+            }
+
+            return answer;
+        }
+
+
+
+    }
+}

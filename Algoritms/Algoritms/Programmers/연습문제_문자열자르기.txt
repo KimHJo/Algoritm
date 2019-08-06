@@ -10,8 +10,16 @@ namespace Algoritms {
 
             string s = "abcde";
         }
-        public int[] solution(int[] arr, int divisor) {
-            int[] answer = new int[] { };
+        public string solution(string s) {
+            string answer = "";
+
+            int slen = s.Length;
+
+            if (s.Length % 2 == 0)
+                answer = s.Substring(slen / 2 - 1, 2);
+            else
+                answer = s.Substring(slen / 2, 1);
+
             return answer;
         }
     }
