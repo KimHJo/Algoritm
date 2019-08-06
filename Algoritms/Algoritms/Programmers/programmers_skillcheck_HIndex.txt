@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections;
+using System.Linq;
+using System.IO;
+using System.Collections.Generic;
+
+namespace Algoritms {
+    class Program {
+        static void Main(string[] args) {
+
+            int[] ci = new int[] { 7,7, 3, 2, 6, 5 };
+
+            Console.WriteLine(solution(ci));
+        }
+
+        public static int solution(int[] citations) {
+            Array.Sort(citations);
+
+            int answer = 0;
+
+            int index = citations.Length - 1;
+            while (true) {
+                if (citations.Count(x => x>= citations[index]) >= citations[index]) {
+                    answer = citations[index];
+                    break;
+                }
+                index--;
+            }
+
+            return answer;
+        }
+    }
+}
