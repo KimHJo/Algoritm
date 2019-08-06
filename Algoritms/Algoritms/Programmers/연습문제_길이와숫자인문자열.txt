@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections;
+using System.Linq;
+using System.IO;
+using System.Collections.Generic;
+
+namespace Algoritms {
+    class Program {
+        static void Main(string[] args) {
+        }
+        public bool solution(string s) {
+            bool answer;
+
+            if (s.Length == 4 || s.Length == 6)
+                answer = s.All(x => Char.IsDigit(x));
+            else
+                answer = false;
+
+            return answer;
+        }
+    }
+}
