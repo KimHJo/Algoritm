@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections;
+using System.Linq;
+using System.IO;
+using System.Collections.Generic;
+
+namespace Algoritms {
+    class Program {
+        static void Main(string[] args) {
+        }
+        public static string solution(string s) {
+
+            string[] str = s.Split(' ');
+
+            int max = str.Max(x => int.Parse(x));
+            int min = str.Min(x => int.Parse(x));
+
+            List<int> istr = new List<int>();
+
+            foreach(string st in str) {
+                istr.Add(int.Parse(st));
+            }
+        
+            string answer = "";
+
+            answer += istr[0] + " " + istr[s.Length - 1];
+            return answer;
+        }
+
+    }
+}
