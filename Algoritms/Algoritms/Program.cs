@@ -10,9 +10,6 @@ namespace Algoritms {
 
             string s = "abcde";
         }
-        public int[] solution(int[] arr, int divisor) {
-            int[] answer = new int[] { };
-            return answer;
-        }
+
     }
 }
