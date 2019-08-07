@@ -8,8 +8,16 @@ namespace Algoritms {
     class Program {
         static void Main(string[] args) {
 
+            string S = "+1234";
+
+            Console.WriteLine(solution(S));
         }
 
+        public static int solution(string s) {
+
+            int answer = int.Parse(s);
+            return answer;
+        }
 
     }
 }
