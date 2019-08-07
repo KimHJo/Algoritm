@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections;
+using System.Linq;
+using System.IO;
+using System.Collections.Generic;
+
+namespace Algoritms {
+    class Program {
+        static void Main(string[] args) {
+
+            long N = 118372;
+
+            Console.WriteLine(solution(N));
+        }
+
+        public static long solution(long n) {
+            var array = n.ToString().ToArray();
+            Array.Sort(array, (x, y) => {
+                return y.CompareTo(x);
+            });
+
+
+            string answer = String.Join("", array);
+            return long.Parse(answer);
+        }
+    }
+}

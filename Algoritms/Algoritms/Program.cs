@@ -7,9 +7,6 @@ using System.Collections.Generic;
 namespace Algoritms {
     class Program {
         static void Main(string[] args) {
-
-            long N = 11230;
-            solution(N);
         }
     }
 }
