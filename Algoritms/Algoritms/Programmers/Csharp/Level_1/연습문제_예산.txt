@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections;
+using System.Linq;
+using System.IO;
+using System.Collections.Generic;
+
+namespace Algoritms {
+    class Program {
+        static void Main(string[] args) {
+            Console.WriteLine(solution(new int[] { 2, 2, 3, 3 }, 10));
+        }
+
+        public static int solution(int[] d, int budget) {
+            int answer = 1;
+
+            int sum = 0;
+            Array.Sort(d, (x, y) => {
+                return x.CompareTo(y);
+            });
+
+            
+            for(int i = 0; i < d.Length; i++) {
+                sum += d[i];
+
+                if (sum > budget) {
+                    answer++;
+                } else
+                    break;
+            }
+
+            return answer;
+
+        }
+    }
+
+}

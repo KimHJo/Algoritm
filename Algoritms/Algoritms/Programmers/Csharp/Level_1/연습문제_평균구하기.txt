@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections;
+using System.Linq;
+using System.IO;
+using System.Collections.Generic;
+
+namespace Algoritms {
+    class Program {
+        static void Main(string[] args) {
+            Console.WriteLine(solution(new int[] { 2, 3, 4, 5 }));
+        }
+        public static double solution(int[] arr) {
+
+            return arr.Average(); 
+        }
+
+    }
+
+}
