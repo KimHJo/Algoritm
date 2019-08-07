@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections;
+using System.Linq;
+using System.IO;
+using System.Collections.Generic;
+
+namespace Algoritms {
+    class Program {
+        static void Main(string[] args) {
+            Console.WriteLine(solution(12));
+        }
+        public static int solution(int n) {
+            int answer = 0;
+
+            for (int i = 1; i <= n; i++) {
+                if (n % i == 0)
+                    answer += i;
+            }
+            return answer;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections;
+using System.Linq;
+using System.IO;
+using System.Collections.Generic;
+
+namespace Algoritms {
+    class Program {
+        static void Main(string[] args) {
+            Console.WriteLine(solution(100));
+        }
+
+        public static long solution(long n) {
+            double dsq = Math.Sqrt(n);
+
+            int isq = (int)Math.Sqrt(n);
+
+            long answer = 0;
+            if (dsq - isq == 0)
+                answer = (long)Math.Pow(dsq + 1, 2);
+            else
+                answer = -1;
+
+            return answer;
+        }
+
+    }
+
+}
