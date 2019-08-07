@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections;
+using System.Linq;
+using System.IO;
+using System.Collections.Generic;
+
+namespace Algoritms {
+    class Program {
+        static void Main(string[] args) {
+            string s = "Zbcdefg";
+
+            Console.WriteLine(solution(s));
+        }
+        public static string solution(string s) {
+            char[] str = s.ToArray();
+            Array.Sort(str, (x, y)=> {
+                return x.CompareTo(y);
+            });
+
+            string answer = String.Join("", str);
+
+            return answer;
+        }
+    }
+}
