@@ -8,58 +8,24 @@ namespace Algoritms {
     class Program {
         static void Main(string[] args) {
             Console.WriteLine(solution("1924", 2));
-            Console.WriteLine(solution("4177252841", 4));
+            //Console.WriteLine(solution("4177252841", 4));
         }
         public static string solution(string number, int k) {
-            //char[] temp = number.ToArray();
             char[] numArray = number.ToArray();
 
-            //int numLen = number.ToString().Length;
             int numLen = number.Length;
 
+            //몇번 숫자를 공백처리것인가
             for (int i = 0; i < k; i++) {
+                //비교숫자 1번 loop
                 for (int j = 0; j < numLen - 1; j++) {
-                    if (numArray[j] == ' ')
-                        break;
-
-                    for (int s = j + 1; s < numLen; s++) {
-                        if (numArray[s] == ' ')
-                            s++;
-
-                        if (numArray[j] == numArray[s]) {
-                            s++;
-                        } else if (numArray[j] > numArray[s]) {
-                            numArray[s] = ' ';
-                            break;
-                        } else if (numArray[j] < numArray[s]) {
-                            numArray[j] = ' ';
-                            break;
-                        }
+                    //비교숫자 2번 loop
+                    for(int s = j+1; s< numLen; s++) {
+                        Console.WriteLine("I:{0} J:{1} S:{2}", i, j, s);
                     }
+                    Console.WriteLine();
                 }
             }
-
-
-            //for (int i = 0; i < k; i++) {
-            //    for (int j = 0; j < numLen - 1; j++) {
-            //        //Console.Write("i = {0}", i);
-            //        for (int s = j + 1; s < numLen; s++) {
-
-            //            Console.WriteLine("i값 : {0} / j값 : {1}", temp[j], temp[s]);
-            //            if (temp[j] < temp[s]) {
-            //                temp[j] = ' ';
-            //                break;
-            //            } else if (temp[j] > temp[s]) {
-            //                temp[s] = ' ';
-            //                break;
-            //            } else {
-            //                break;
-            //            }
-            //        }
-            //    }
-            //}
-
-            //string answer = "";
             string answer = "";
 
             foreach (char c in numArray) {
