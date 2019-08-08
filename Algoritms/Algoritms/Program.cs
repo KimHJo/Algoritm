@@ -8,31 +8,23 @@ namespace Algoritms {
     class Program {
         static void Main(string[] args) {
             Console.WriteLine(solution("1924", 2));
-            //Console.WriteLine(solution("4177252841", 4));
+            Console.WriteLine(solution("4177252841", 4));
         }
         public static string solution(string number, int k) {
-            char[] numArray = number.ToArray();
-
-            int numLen = number.Length;
-
-            //몇번 숫자를 공백처리것인가
-            for (int i = 0; i < k; i++) {
-                //비교숫자 1번 loop
-                for (int j = 0; j < numLen - 1; j++) {
-                    //비교숫자 2번 loop
-                    for(int s = j+1; s< numLen; s++) {
-                        Console.WriteLine("I:{0} J:{1} S:{2}", i, j, s);
-                    }
-                    Console.WriteLine();
-                }
-            }
             string answer = "";
+            int count = k;
+            var numList = number.ToList();
+            if (number.All(x => x == '0'))
+                return answer = "0";
 
-            foreach (char c in numArray) {
-                if (c != ' ') {
-                    answer += c;
-                }
+            while(count > 0) {
+                var list = numList.GetRange(0, k);
+
+                var min = list.Min().ToString();
+                numList.Remove(Convert.ToChar(min));
+                count--;
             }
+             answer = String.Join("", numList) ;
 
             return answer;
         }
