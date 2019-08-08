@@ -10,24 +10,24 @@ namespace Algoritms {
             Console.WriteLine(solution(626331));
         }
         public static int solution(int num) {
-            int answer = 1;
+            int answer = 0;
 
             long temp = (long)num;
 
             int i = 0;
             while (i < 500) {
+                if (temp == 1) {
+                    break;
+                }
+                
+                i++;
+                
                 if (temp % 2 == 0) {
                     temp = temp / 2;
                 } else {
                     temp = temp * 3 + 1;
                 }
-
-                if (temp == 1) {
-                    break;
-                }
-
-                answer++;
-                i++;
+                answer = i;
 
                 if(i >= 500) {
                     answer = -1;
