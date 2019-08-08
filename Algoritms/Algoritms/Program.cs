@@ -11,43 +11,37 @@ namespace Algoritms {
             Console.WriteLine(solution("4177252841", 4));
         }
         public static string solution(string number, int k) {
-            char[] temp = number.ToArray();
+            //char[] temp = number.ToArray();
 
-            int numLen = number.ToString().Length;
+            //int numLen = number.ToString().Length;
 
-            for (int i = 0; i < k; i++) {
-                // i = 0 1 
-                for (int j = i; j < numLen - 2; j++) {
-                    // i = 0 : j = 0 1 2
-                    // i = 1 : j = 1 2
-                    for (int s = j + 1; s < numLen - 1; s++) {
-                        // i = 0 : j = 0 : s = 1 2 3
-                        // i = 0 : j = 1 : s = 2 3
-                        // i = 0 : j = 2 : s = 3
+            //for (int i = 0; i < k; i++) {
+            //    for (int j = 0; j < numLen - 1; j++) {
+            //        //Console.Write("i = {0}", i);
+            //        for (int s = j + 1; s < numLen; s++) {
 
-                        // i = 1 : j = 1 : s = 2 3
-                        // i = 1 : j = 2 : s = 3
-                        if (temp[j] == temp[s]) {
-                            j++;
-                        } else if (temp[j] < temp[s]) {
-                            temp[j] = ' ';
-                            break;
-                        } else {
-                            temp[s] = ' ';
-                            break;
-                        }
-                    }
-                }
-            }
+            //            Console.WriteLine("i값 : {0} / j값 : {1}", temp[j], temp[s]);
+            //            if (temp[j] < temp[s]) {
+            //                temp[j] = ' ';
+            //                break;
+            //            } else if (temp[j] > temp[s]) {
+            //                temp[s] = ' ';
+            //                break;
+            //            } else {
+            //                break;
+            //            }
+            //        }
+            //    }
+            //}
 
+            //string answer = "";
+
+            //foreach (char c in temp) {
+            //    if (c != ' ') {
+            //        answer += c;
+            //    }
+            //}
             string answer = "";
-
-            foreach(char c in temp) {
-                if( c != ' ') {
-                    answer += c;
-                }
-            }
-
             return answer;
         }
 
