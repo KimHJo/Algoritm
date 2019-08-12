@@ -9,5 +9,9 @@ namespace Algoritms {
     class Program {
         static void Main(string[] args) {
         }
+        public static int solution(int bridge_length, int weight, int[] truck_weights) {
+            int answer = 0;
+            return answer;
+        }
     }
 }
