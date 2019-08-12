@@ -8,26 +8,6 @@ using System.Text;
 namespace Algoritms {
     class Program {
         static void Main(string[] args) {
-
-            foreach(var c in solution(new int[] { 6, 9, 5, 7, 4 })) {
-                Console.WriteLine(c);
-            }
-        }
-        public static int[] solution(int[] heights) {
-            int[] answer = Enumerable.Repeat<int>(0, heights.Length).ToArray();
-
-            for(int i = heights.Length - 1; i >= 0; i--) {
-                int index = heights[i];
-
-                for(int j = i - 1; j >= 0; j--) {
-                    if (heights[j] > index) {
-                        answer[i] = j+1;
-                        break;
-                    }
-                }
-            }
-
-            return answer;
         }
     }
 }
