@@ -42,6 +42,8 @@ namespace Algoritms {
                     answer.Add(count);
                     count = 0;
                 }
+
+
             }
 
             return answer.ToArray();
