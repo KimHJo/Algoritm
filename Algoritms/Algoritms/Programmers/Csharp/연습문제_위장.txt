@@ -1,0 +1,49 @@
+﻿using System;
+using System.Collections;
+using System.Linq;
+using System.IO;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Algoritms {
+    class Program {
+        static void Main(string[] args) {
+
+            Console.WriteLine(solution(new string[,] { { "yellow_hat", "headgear" }, { "blue_sunglasses", "eyewear" }, { "green_turban", "headgear" } }));
+        }
+
+        public static int solution(string[,] clothes) {
+            Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
+
+            for (int i = 0; i < clothes.GetLength(0); i++) {
+                string key = clothes[i, 1];
+                string value = clothes[i, 0];
+
+                if (dict.ContainsKey(key)) {
+                    dict[key].Add(value);
+                } else {
+                    dict[key] = new List<string> { value };
+                }
+            }
+            
+            int[] array = new int[dict.Keys.Count()];
+            string[] keyArray = dict.Keys.ToArray();
+            
+            for (int i = 0; i < dict.Keys.Count(); i++) {
+                array[i] = dict[keyArray[i]].Count();
+            }
+
+            int answer = 1;
+
+            if(keyArray.Length == 1) {
+                answer = array[0] + 1;
+            } else {
+                for(int i = 0; i < array.Length; i++) {
+                    answer *= array[i] + 1;
+                }
+            }
+
+            return answer -1;
+        }
+    }
+}

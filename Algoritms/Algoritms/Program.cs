@@ -9,10 +9,5 @@ namespace Algoritms {
     class Program {
         static void Main(string[] args) {
         }
-
-        public static int solution(string[,] clothes) {
-            int answer = 0;
-            return answer;
-        }
     }
 }
