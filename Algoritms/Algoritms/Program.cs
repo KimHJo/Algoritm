@@ -15,6 +15,27 @@ namespace Algoritms {
             int day = 0;
             int truck_index = 0;
 
+
+            #region <List>
+            //List<int> bridge = Enumerable.Repeat(0, bridge_length).ToList();
+
+            //while (truck_index < truck_weights.Length) {
+            //    day++;
+
+            //    bridge.RemoveAt(0);
+
+            //    if (bridge.Sum() + truck_weights[truck_index] <= weight) {
+            //        bridge.Add(truck_weights[truck_index]);
+
+            //        truck_index++;
+            //        continue;
+            //    }
+
+            //    bridge.Add(0);
+            //}
+            #endregion
+
+            #region <Queue>
             Queue<int> bridge = new Queue<int>();
 
             //init
@@ -36,6 +57,7 @@ namespace Algoritms {
 
                 bridge.Enqueue(0);
             }
+            #endregion
 
             return day + bridge_length;
         }
