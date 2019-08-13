@@ -1,0 +1,47 @@
+﻿using System;
+using System.Collections;
+using System.Linq;
+using System.IO;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Algoritms {
+    class Program {
+        static void Main(string[] args) {
+            Console.WriteLine(solution("3people unFollowed me"));
+
+            Console.WriteLine(solution("3people 2unFollowed me"));
+
+            Console.WriteLine(solution("3people unFollowed 1me"));
+
+        }
+
+        public static string solution(string s) {
+            string[] strArray = s.Split(' ').ToArray();
+
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < strArray.Length; i++) {
+
+                char[] cArray = strArray[i].ToArray();
+
+                for (int j = 0; j < strArray[i].Length; j++) {
+                    if(j == 0) {
+                        if (Char.IsNumber(cArray[j]))
+                            sb.Append(cArray[j].ToString());
+                        else
+                            sb.Append(cArray[j].ToString().ToUpper());
+                    } else {
+                        sb.Append(cArray[j].ToString().ToLower());
+                    }
+                }
+                if (i == strArray.Length - 1)
+                    continue;
+
+                sb.Append(" ");
+            }
+
+            return sb.ToString();
+        }
+    }
+}
