@@ -8,10 +8,35 @@ using System.Text;
 namespace Algoritms {
     class Program {
         static void Main(string[] args) {
+            //Console.WriteLine(solution(2, 10, new int[] { 7, 4, 5, 6 }));
+            Console.WriteLine(solution(100, 100, new int[] { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 }));
         }
         public static int solution(int bridge_length, int weight, int[] truck_weights) {
-            int answer = 0;
-            return answer;
+            int day = 0;
+            int truck_index = 0;
+
+            Queue<int> bridge = new Queue<int>();
+
+            //init
+            for (int i = 0; i < bridge_length; i++) {
+                bridge.Enqueue(0);
+            }
+
+            while (truck_index != truck_weights.Length) {
+                day++;
+
+                if (bridge.Sum() + truck_weights[truck_index] - bridge.Peek() <= weight) {
+                    bridge.Dequeue();
+                    bridge.Enqueue(truck_weights[truck_index]);
+
+                    truck_index++;
+                } else {
+                    bridge.Dequeue();
+                    bridge.Enqueue(0);
+                }
+            }
+
+            return day + bridge_length;
         }
     }
 }
