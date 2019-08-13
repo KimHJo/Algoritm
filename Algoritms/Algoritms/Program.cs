@@ -9,60 +9,12 @@ namespace Algoritms {
     class Program {
         static void Main(string[] args) {
             //Console.WriteLine(solution(2, 10, new int[] { 7, 4, 5, 6 }));
-            Console.WriteLine(solution(100, 100, new int[] { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 }));
+            Console.WriteLine(solution(new int[] { 2, 1, 3, 2 }, 2));
         }
-        public static int solution(int bridge_length, int weight, int[] truck_weights) {
-            if (truck_weights.Length == 1)
-                return bridge_length + 1;
-
-            int day = 0;
-            int truck_index = 0;
-
-            #region <Queue>
-            Queue<int> bridge = new Queue<int>(bridge_length);
-
-            //init
-            for (int i = 0; i < bridge_length; i++) {
-                bridge.Enqueue(0);
-            }
-
-            while (truck_index < truck_weights.Length) {
-                day++;
-
-                bridge.Dequeue();
-
-                    if (bridge.Sum() + truck_weights[truck_index] <= weight) {
-                        bridge.Enqueue(truck_weights[truck_index]);
-
-                        truck_index++;
-                        continue;
-                    }
-                              
-
-                bridge.Enqueue(0);
-            }
-            #endregion
-
-            return day + bridge_length;
+        public static int solution(int[] priorities, int location) {
+            int answer = 0;
+            return answer;
         }
+
     }
 }
-
-#region <List>
-//List<int> bridge = Enumerable.Repeat(0, bridge_length).ToList();
-
-//while (truck_index < truck_weights.Length) {
-//    day++;
-
-//    bridge.RemoveAt(0);
-
-//    if (bridge.Sum() + truck_weights[truck_index] <= weight) {
-//        bridge.Add(truck_weights[truck_index]);
-
-//        truck_index++;
-//        continue;
-//    }
-
-//    bridge.Add(0);
-//}
-#endregion
