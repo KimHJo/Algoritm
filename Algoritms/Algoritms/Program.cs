@@ -22,18 +22,19 @@ namespace Algoritms {
                 bridge.Enqueue(0);
             }
 
-            while (truck_index != truck_weights.Length) {
+            while (truck_index < truck_weights.Length) {
                 day++;
 
-                if (bridge.Sum() + truck_weights[truck_index] - bridge.Peek() <= weight) {
-                    bridge.Dequeue();
+                bridge.Dequeue();
+
+                if (bridge.Sum() + truck_weights[truck_index] <= weight) {
                     bridge.Enqueue(truck_weights[truck_index]);
 
                     truck_index++;
-                } else {
-                    bridge.Dequeue();
-                    bridge.Enqueue(0);
+                    continue;
                 }
+
+                bridge.Enqueue(0);
             }
 
             return day + bridge_length;
